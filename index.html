@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mysterious chest</title>
+    <meta name="description" content="پلتفرم جامع آموزش رمزنگاری با ابزارهای عملی رمزگذاری و رمزگشایی متن و فایل، شبیه‌سازی پروتکل‌ها و بازی‌های آموزشی امنیت">
+    <meta name="theme-color" content="#0a0e1a">
+    <meta property="og:title" content="رمزنگار — CryptoLab">
+    <meta property="og:description" content="پلتفرم جامع آموزش و ابزار رمزنگاری مبتنی بر وب">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="dark">
+
+    <!-- Navigation -->
+    <header class="nav-header" id="navHeader">
+        <nav class="nav-container" aria-label="Main navigation">
+            <a href="#" class="nav-logo" aria-label="CryptoLab Home">
+                <span class="logo-icon">🔐</span>
+                <span class="logo-text" data-i18n="brand">رمزنگار</span>
+            </a>
+            
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="#overview" class="nav-link" data-i18n="nav.overview">معرفی</a>
+                <a href="#features" class="nav-link" data-i18n="nav.features">امکانات</a>
+                <a href="#tools" class="nav-link" data-i18n="nav.tools">ابزارها</a>
+                <a href="#education" class="nav-link" data-i18n="nav.education">آموزش</a>
+                <a href="#architecture" class="nav-link" data-i18n="nav.architecture">معماری</a>
+                <a href="#tech" class="nav-link" data-i18n="nav.tech">فناوری</a>
+                
+                <div class="nav-actions">
+                    <button class="lang-switcher" id="langSwitcher" aria-label="Switch language">
+                        <span class="lang-fa">EN</span>
+                        <span class="lang-en">فا</span>
+                    </button>
+                    <a href="#get-started" class="nav-cta" data-i18n="nav.cta">شروع کنید</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-bg">
+                <div class="hero-grid"></div>
+                <div class="hero-glow"></div>
+            </div>
+            <div class="container hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span data-i18n="hero.badge">نسخه فعال توسعه</span>
+                </div>
+                <h1 class="hero-title" data-i18n="hero.title">رمزنگار</h1>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">پلتفرم جامع آموزش و ابزار رمزنگاری مبتنی بر وب</p>
+                <p class="hero-desc" data-i18n="hero.desc">ترکیبی از ابزارهای عملی رمزگذاری متن و فایل، آموزش تعاملی مفاهیم رمزنگاری، شبیه‌سازی پروتکل‌های امنیتی و بازی‌های آموزشی — همه در مرورگر شما و بدون نیاز به نصب.</p>
+                
+                <div class="hero-actions">
+                    <a href="#tools" class="btn btn-primary" data-i18n="hero.cta1">مشاهده ابزارها</a>
+                    <a href="#education" class="btn btn-secondary" data-i18n="hero.cta2">شروع یادگیری</a>
+                </div>
+
+                <div class="hero-tech">
+                    <span class="tech-badge">Web Crypto API</span>
+                    <span class="tech-badge">AES-256</span>
+                    <span class="tech-badge">RSA-4096</span>
+                    <span class="tech-badge">PBKDF2</span>
+                    <span class="tech-badge">Vanilla JS</span>
+                </div>
+
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="visual-card">
+                        <div class="visual-header">
+                            <span class="visual-dot red"></span>
+                            <span class="visual-dot yellow"></span>
+                            <span class="visual-dot green"></span>
+                        </div>
+                        <div class="visual-body">
+                            <code class="visual-code">
+                                <span class="code-comment">// رمزگذاری AES-GCM</span><br>
+                                <span class="code-keyword">const</span> key = <span class="code-keyword">await</span> crypto.subtle<br>
+                                &nbsp;&nbsp;.<span class="code-method">deriveKey</span>({<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;name: <span class="code-string">"PBKDF2"</span>,<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;salt, iterations: <span class="code-number">100000</span><br>
+                                &nbsp;&nbsp;}, keyMaterial, {<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;name: <span class="code-string">"AES-GCM"</span>, length: <span class="code-number">256</span><br>
+                                &nbsp;&nbsp;}, <span class="code-keyword">false</span>, [<span class="code-string">"encrypt"</span>]);
+                            </code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Overview Section -->
+        <section class="section" id="overview">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="overview.title">درباره پروژه</h2>
+                    <p class="section-desc" data-i18n="overview.desc">رمزنگار یک پلتفرم وب‌محور است که شکاف بین آموزش تئوری رمزنگاری و پیاده‌سازی عملی را پر می‌کند.</p>
+                </div>
+                
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <div class="overview-icon">🎯</div>
+                        <h3 data-i18n="overview.purpose.title">هدف</h3>
+                        <p data-i18n="overview.purpose.desc">آموزش مفاهیم رمزنگاری از پایه تا پیشرفته همراه با ابزارهای عملی قابل استفاده</p>
+                    </div>
+                    <div class="overview-card">
+                        <div class="overview-icon">👥</div>
+                        <h3 data-i18n="overview.audience.title">مخاطبان</h3>
+                        <p data-i18n="overview.audience.desc">دانشجویان امنیت، توسعه‌دهندگان، علاقه‌مندان به رمزنگاری و مدرسین</p>
+                    </div>
+                    <div class="overview-card">
+                        <div class="overview-icon">🔒</div>
+                        <h3 data-i18n="overview.security.title">امنیت</h3>
+                        <p data-i18n="overview.security.desc">تمام عملیات رمزنگاری در سمت کلاینت و با استفاده از Web Crypto API مرورگر انجام می‌شود</p>
+                    </div>
+                    <div class="overview-card">
+                        <div class="overview-icon">📚</div>
+                        <h3 data-i18n="overview.education.title">آموزش</h3>
+                        <p data-i18n="overview.education.desc">بیش از ۲۰ ماژول آموزشی از مفاهیم پایه تا رمزنگاری کوانتومی</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section section-alt" id="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="features.title">امکانات کلیدی</h2>
+                    <p class="section-desc" data-i18n="features.desc">مجموعه‌ای کامل از ابزارها و قابلیت‌ها برای یادگیری و استفاده عملی</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔐</div>
+                        <h3 data-i18n="features.text.title">رمزگذاری متن</h3>
+                        <p data-i18n="features.text.desc">پشتیبانی از ۱۳+ الگوریتم شامل AES-GCM، RSA، Caesar، Vigenere، OTP و بیشتر</p>
+                        <span class="feature-badge" data-i18n="features.text.badge">۱۳+ الگوریتم</span>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📁</div>
+                        <h3 data-i18n="features.file.title">رمزگذاری فایل</h3>
+                        <p data-i18n="features.file.desc">رمزگذاری و رمزگشایی فایل‌ها با AES-GCM/CBC/CTR و مدیریت Salt و IV تصادفی</p>
+                        <span class="feature-badge" data-i18n="features.file.badge">Streaming</span>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎓</div>
+                        <h3 data-i18n="features.edu.title">آموزش تعاملی</h3>
+                        <p data-i18n="features.edu.desc">ماژول‌های آموزشی با مثال عملی، آزمایشگاه و آزمون برای هر مفهوم</p>
+                        <span class="feature-badge" data-i18n="features.edu.badge">۲۰+ ماژول</span>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔑</div>
+                        <h3 data-i18n="features.keys.title">مدیریت کلید</h3>
+                        <p data-i18n="features.edu.desc">تولید جفت‌کلید RSA-4096 و ECDSA P-256 با خروجی PEM</p>
+                        <span class="feature-badge" data-i18n="features.keys.badge">RSA/ECC</span>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🧪</div>
+                        <h3 data-i18n="features.sim.title">شبیه‌سازی پروتکل</h3>
+                        <p data-i18n="features.sim.desc">شبیه‌سازی آموزشی TLS Handshake، بلاکچین و تبادل کلید Diffie-Hellman</p>
+                        <span class="feature-badge" data-i18n="features.sim.badge">آموزشی</span>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚔️</div>
+                        <h3 data-i18n="features.game.title">بازی حمله/دفاع</h3>
+                        <p data-i18n="features.game.desc">تمرین تصمیم‌گیری امنیتی در قالب بازی آموزشی با نقش مهاجم و مدافع</p>
+                        <span class="feature-badge" data-i18n="features.game.badge">Gamification</span>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3 data-i18n="features.strength.title">سنجش قدرت رمز</h3>
+                        <p data-i18n="features.strength.desc">تحلیل قدرت رمز عبور و تولید رمز تصادفی امن با Web Crypto</p>
+                        <span class="feature-badge" data-i18n="features.strength.badge">Real-time</span>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌐</div>
+                        <h3 data-i18n="features.i18n.title">دوزبانه</h3>
+                        <p data-i18n="features.i18n.desc">پشتیبانی کامل از فارسی (RTL) و انگلیسی (LTR) با تغییر آنی</p>
+                        <span class="feature-badge" data-i18n="features.i18n.badge">FA / EN</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Showcase -->
+        <section class="section" id="tools">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="tools.title">ابزارهای عملی</h2>
+                    <p class="section-desc" data-i18n="tools.desc">ابزارهای رمزنگاری کاملاً کاربردی که در مرورگر شما اجرا می‌شوند</p>
+                </div>
+
+                <div class="tools-showcase">
+                    <div class="tool-card tool-primary">
+                        <div class="tool-header">
+                            <span class="tool-icon">🔐</span>
+                            <h3 data-i18n="tools.text.title">رمزگذاری پیشرفته متن</h3>
+                        </div>
+                        <p data-i18n="tools.text.desc">رمزگذاری و رمزگشایی متن با الگوریتم‌های مدرن و کلاسیک</p>
+                        <ul class="tool-list">
+                            <li data-i18n="tools.text.f1">AES-GCM / AES-CBC با PBKDF2</li>
+                            <li data-i18n="tools.text.f2">RSA-OAEP 4096-bit</li>
+                            <li data-i18n="tools.text.f3">SHA-256 / SHA-512 hashing</li>
+                            <li data-i18n="tools.text.f4">Caesar, Vigenere, Playfair, OTP</li>
+                            <li data-i18n="tools.text.f5">Morse, ROT13, RC4, Base64</li>
+                            <li data-i18n="tools.text.f6">خروجی Base64, Hex, Binary</li>
+                        </ul>
+                        <div class="tool-tags">
+                            <span>Web Crypto API</span>
+                            <span>PBKDF2</span>
+                            <span>100K iterations</span>
+                        </div>
+                    </div>
+
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <span class="tool-icon">📁</span>
+                            <h3 data-i18n="tools.file.title">رمزگذاری فایل</h3>
+                        </div>
+                        <p data-i18n="tools.file.desc">رمزگذاری و رمزگشایی فایل با نمایش پیشرفت عملیات</p>
+                        <ul class="tool-list">
+                            <li data-i18n="tools.file.f1">AES-GCM (پیشنهادی)</li>
+                            <li data-i18n="tools.file.f2">AES-CBC / AES-CTR</li>
+                            <li data-i18n="tools.file.f3">Salt و IV تصادفی</li>
+                            <li data-i18n="tools.file.f4">نمایش پیشرفت خواندن/نوشتن</li>
+                            <li data-i18n="tools.file.f5">تاریخچه عملیات</li>
+                        </ul>
+                        <div class="tool-tags">
+                            <span>Streaming</span>
+                            <span>File API</span>
+                        </div>
+                    </div>
+
+                    <div class="tool-card">
+                        <div class="tool-header">
+                            <span class="tool-icon">🔑</span>
+                            <h3 data-i18n="tools.keys.title">تولید و مدیریت کلید</h3>
+                        </div>
+                        <p data-i18n="tools.keys.desc">تولید جفت‌کلیدهای امن با خروجی استاندارد</p>
+                        <ul class="tool-list">
+                            <li data-i18n="tools.keys.f1">RSA-OAEP 4096-bit</li>
+                            <li data-i18n="tools.keys.f2">ECDSA P-256</li>
+                            <li data-i18n="tools.keys.f3">خروجی PEM / SPKI / PKCS8</li>
+                            <li data-i18n="tools.keys.f4">امضا و اعتبارسنجی</li>
+                        </ul>
+                        <div class="tool-tags">
+                            <span>SubtleCrypto</span>
+                            <span>PEM Export</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="section section-alt" id="education">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="edu.title">مسیر آموزش</h2>
+                    <p class="section-desc" data-i18n="edu.desc">از مفاهیم پایه تا موضوعات پیشرفته — با مثال عملی و آزمایشگاه تعاملی</p>
+                </div>
+
+                <div class="edu-paths">
+                    <div class="edu-path">
+                        <div class="path-level" data-i18n="edu.level1">مقدماتی</div>
+                        <div class="path-modules">
+                            <div class="module-chip" data-i18n="edu.m1">محرمانگی و یکپارچگی</div>
+                            <div class="module-chip" data-i18n="edu.m2">احراز هویت</div>
+                            <div class="module-chip" data-i18n="edu.m3">مدیریت کلید</div>
+                            <div class="module-chip" data-i18n="edu.m4">هش‌ها (SHA-256)</div>
+                            <div class="module-chip" data-i18n="edu.m5">Base64 و کدگذاری</div>
+                        </div>
+                    </div>
+                    <div class="edu-path">
+                        <div class="path-level" data-i18n="edu.level2">متوسط</div>
+                        <div class="path-modules">
+                            <div class="module-chip" data-i18n="edu.m6">AES-GCM گام به گام</div>
+                            <div class="module-chip" data-i18n="edu.m7">RSA-OAEP</div>
+                            <div class="module-chip" data-i18n="edu.m8">ECDSA</div>
+                            <div class="module-chip" data-i18n="edu.m9">HMAC-SHA256</div>
+                            <div class="module-chip" data-i18n="edu.m10">PBKDF2 و Argon2</div>
+                            <div class="module-chip" data-i18n="edu.m11">TLS/HTTPS</div>
+                        </div>
+                    </div>
+                    <div class="edu-path">
+                        <div class="path-level" data-i18n="edu.level3">پیشرفته</div>
+                        <div class="path-modules">
+                            <div class="module-chip" data-i18n="edu.m12">بلاکچین</div>
+                            <div class="module-chip" data-i18n="edu.m13">OAuth2 / JWT</div>
+                            <div class="module-chip" data-i18n="edu.m14">اثبات دانش صفر (ZKP)</div>
+                            <div class="module-chip" data-i18n="edu.m15">محاسبات چندجانبه (MPC)</div>
+                            <div class="module-chip" data-i18n="edu.m16">رمزنگاری همومورفیک</div>
+                            <div class="module-chip" data-i18n="edu.m17">رمزنگاری کوانتومی</div>
+                            <div class="module-chip" data-i18n="edu.m18">حملات کانال جانبی</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="edu-features">
+                    <div class="edu-feature">
+                        <span class="edu-feature-icon">🧪</span>
+                        <div>
+                            <h4 data-i18n="edu.lab.title">آزمایشگاه عملی</h4>
+                            <p data-i18n="edu.lab.desc">هر مفهوم با مثال قابل اجرا همراه است</p>
+                        </div>
+                    </div>
+                    <div class="edu-feature">
+                        <span class="edu-feature-icon">📝</span>
+                        <div>
+                            <h4 data-i18n="edu.quiz.title">آزمون و کارنامه</h4>
+                            <p data-i18n="edu.quiz.desc">سنجش یادگیری با آزمون‌های تعاملی و کارنامه گرافیکی</p>
+                        </div>
+                    </div>
+                    <div class="edu-feature">
+                        <span class="edu-feature-icon">⚠️</span>
+                        <div>
+                            <h4 data-i18n="edu.ethics.title">اخلاق و قوانین</h4>
+                            <p data-i18n="edu.ethics.desc">تأکید بر استفاده آموزشی و غیرمخرب از ابزارها</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Architecture Section -->
+        <section class="section" id="architecture">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="arch.title">معماری فنی</h2>
+                    <p class="section-desc" data-i18n="arch.desc">معماری سمت کلاینت با تمرکز بر امنیت و حریم خصوصی</p>
+                </div>
+
+                <div class="arch-diagram">
+                    <div class="arch-layer">
+                        <div class="arch-label" data-i18n="arch.layer1">لایه ارائه (UI)</div>
+                        <div class="arch-items">
+                            <div class="arch-item">HTML5 Semantic</div>
+                            <div class="arch-item">CSS3 (Liquid Glass)</div>
+                            <div class="arch-item">Vanilla JS</div>
+                            <div class="arch-item">RTL/LTR System</div>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer">
+                        <div class="arch-label" data-i18n="arch.layer2">لایه منطق (Logic)</div>
+                        <div class="arch-items">
+                            <div class="arch-item">Classic Ciphers Module</div>
+                            <div class="arch-item">Modern Crypto Module</div>
+                            <div class="arch-item">Key Management</div>
+                            <div class="arch-item">Education Engine</div>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer arch-layer-core">
+                        <div class="arch-label" data-i18n="arch.layer3">لایه رمزنگاری (Web Crypto API)</div>
+                        <div class="arch-items">
+                            <div class="arch-item">SubtleCrypto</div>
+                            <div class="arch-item">crypto.getRandomValues()</div>
+                            <div class="arch-item">PBKDF2 Key Derivation</div>
+                            <div class="arch-item">AES-GCM/CBC/CTR</div>
+                            <div class="arch-item">RSA-OAEP</div>
+                            <div class="arch-item">ECDSA P-256</div>
+                        </div>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer">
+                        <div class="arch-label" data-i18n="arch.layer4">لایه ذخیره‌سازی</div>
+                        <div class="arch-items">
+                            <div class="arch-item">LocalStorage (prefs)</div>
+                            <div class="arch-item">Session (operations)</div>
+                            <div class="arch-item">File API (files)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="arch-principles">
+                    <div class="principle">
+                        <h4 data-i18n="arch.p1.title">🛡️ عدم ارسال داده به سرور</h4>
+                        <p data-i18n="arch.p1.desc">تمام عملیات رمزنگاری در مرورگر کاربر انجام می‌شود. متن و کلید هرگز از دستگاه خارج نمی‌شوند.</p>
+                    </div>
+                    <div class="principle">
+                        <h4 data-i18n="arch.p2.title">🎲 Salt و IV تصادفی</h4>
+                        <p data-i18n="arch.p2.desc">برای هر عملیات رمزنگاری، Salt و IV یکتا تولید و همراه خروجی ذخیره می‌شود.</p>
+                    </div>
+                    <div class="principle">
+                        <h4 data-i18n="arch.p3.title">⚡ مشتق‌سازی کلید امن</h4>
+                        <p data-i18n="arch.p3.desc">استفاده از PBKDF2 با ۱۰۰,۰۰۰ تکرار برای تبدیل رمز عبور به کلید AES-256.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Stack -->
+        <section class="section section-alt" id="tech">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="tech.title">فناوری‌های استفاده‌شده</h2>
+                    <p class="section-desc" data-i18n="tech.desc">سبک، مدرن و بدون وابستگی به فریمورک‌های سنگین</p>
+                </div>
+
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <div class="tech-icon">⚡</div>
+                        <h3>Web Crypto API</h3>
+                        <p data-i18n="tech.wc.desc">عملیات رمزنگاری استاندارد مرورگر با عملکرد بالا و امنیت سطح سیستم‌عامل</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">🎨</div>
+                        <h3>CSS3 + Liquid Glass</h3>
+                        <p data-i18n="tech.css.desc">طراحی مدرن با Grid، Flexbox، متغیرهای CSS و افکت شیشه‌ای</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">📜</div>
+                        <h3>Vanilla JavaScript</h3>
+                        <p data-i18n="tech.js.desc">بدون فریمورک — کد سبک، سریع و بدون وابستگی خارجی</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">🐘</div>
+                        <h3>PHP</h3>
+                        <p data-i18n="tech.php.desc">سرور بک‌اند برای آنالیتیکس و ردیابی بازدید (غیرمرتبط با رمزنگاری)</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">🔤</div>
+                        <h3>TextEncoder/Decoder</h3>
+                        <p data-i18n="tech.te.desc">تبدیل استاندارد متن به بایت و بالعکس برای پشتیبانی از UTF-8</p>
+                    </div>
+                    <div class="tech-card">
+                        <div class="tech-icon">📱</div>
+                        <h3>Responsive + RTL</h3>
+                        <p data-i18n="tech.rt.desc">طراحی واکنش‌گرا با پشتیبانی کامل از راست‌به‌چپ و منطقی CSS</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics -->
+        <section class="section" id="stats">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="stats.title">آمار پروژه</h2>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-number" data-count="13">0</span>
+                        <span class="stat-label" data-i18n="stats.algos">الگوریتم رمزنگاری</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-count="20">0</span>
+                        <span class="stat-label" data-i18n="stats.modules">ماژول آموزشی</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-count="3">0</span>
+                        <span class="stat-label" data-i18n="stats.pages">صفحه اصلی</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number" data-count="0">0</span>
+                        <span class="stat-sublabel" data-i18n="stats.zero.title">داده ارسالی به سرور</span>
+                        <span class="stat-label" data-i18n="stats.zero.desc">تمام عملیات سمت کلاینت</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Roadmap -->
+        <section class="section section-alt" id="roadmap">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="roadmap.title">نقشه راه</h2>
+                    <p class="section-desc" data-i18n="roadmap.desc">توسعه آینده بر اساس قابلیت‌های موجود و پتانسیل پروژه</p>
+                </div>
+
+                <div class="roadmap-timeline">
+                    <div class="roadmap-item roadmap-done">
+                        <div class="roadmap-dot"></div>
+                        <div class="roadmap-content">
+                            <h4 data-i18n="roadmap.r1.title">ابزارهای رمزگذاری متن و فایل</h4>
+                            <p data-i18n="roadmap.r1.desc">پیاده‌سازی کامل با Web Crypto API و الگوریتم‌های کلاسیک</p>
+                            <span class="roadmap-status" data-i18n="roadmap.done">تکمیل شده</span>
+                        </div>
+                    </div>
+                    <div class="roadmap-item roadmap-done">
+                        <div class="roadmap-dot"></div>
+                        <div class="roadmap-content">
+                            <h4 data-i18n="roadmap.r2.title">پلتفرم آموزشی جامع</h4>
+                            <p data-i18n="roadmap.r2.desc">۲۰+ ماژول آموزشی با آزمایشگاه، آزمون و بازی</p>
+                            <span class="roadmap-status" data-i18n="roadmap.done">تکمیل شده</span>
+                        </div>
+                    </div>
+                    <div class="roadmap-item roadmap-progress">
+                        <div class="roadmap-dot"></div>
+                        <div class="roadmap-content">
+                            <h4 data-i18n="roadmap.r3.title">بهبود تجربه کاربری</h4>
+                            <p data-i18n="roadmap.r3.desc">بهینه‌سازی رابط، انیمیشن‌ها و دسترسی‌پذیری</p>
+                            <span class="roadmap-status" data-i18n="roadmap.progress">در حال توسعه</span>
+                        </div>
+                    </div>
+                    <div class="roadmap-item roadmap-planned">
+                        <div class="roadmap-dot"></div>
+                        <div class="roadmap-content">
+                            <h4 data-i18n="roadmap.r4.title">پشتیبانی از Argon2 در مرورگر</h4>
+                            <p data-i18n="roadmap.r4.desc">اضافه کردن KDF مدرن Argon2 با کتابخانه WASM</p>
+                            <span class="roadmap-status" data-i18n="roadmap.planned">برنامه‌ریزی شده</span>
+                        </div>
+                    </div>
+                    <div class="roadmap-item roadmap-planned">
+                        <div class="roadmap-dot"></div>
+                        <div class="roadmap-content">
+                            <h4 data-i18n="roadmap.r5.title">الگوریتم‌های Post-Quantum</h4>
+                            <p data-i18n="roadmap.r5.desc">پیاده‌سازی آموزشی Kyber و Dilithium</p>
+                            <span class="roadmap-status" data-i18n="roadmap.planned">برنامه‌ریزی شده</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section" id="faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" data-i18n="faq.title">سؤالات متداول</h2>
+                </div>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary data-i18n="faq.q1">آیا داده‌های من به سرور ارسال می‌شوند؟</summary>
+                        <p data-i18n="faq.a1">خیر. تمام عملیات رمزنگاری در مرورگر شما و با استفاده از Web Crypto API انجام می‌شود. متن، کلید و فایل‌های شما هرگز از دستگاهتان خارج نمی‌شوند.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary data-i18n="faq.q2">کدام الگوریتم برای رمزگذاری متن پیشنهاد می‌شود؟</summary>
+                        <p data-i18n="faq.a2">AES-GCM با کلید ۲۵۶ بیتی. این الگوریتم هم رمزنگاری می‌کند و هم یکپارچگی داده را تضمین می‌کند (AEAD). برای فایل نیز AES-GCM پیشنهاد شده است.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary data-i18n="faq.q3">آیا الگوریتم‌های کلاسیک (Caesar, Vigenere) امن هستند؟</summary>
+                        <p data-i18n="faq.a3">خیر. این الگوریتم‌ها صرفاً جنبه آموزشی دارند و برای محافظت از اطلاعات واقعی مناسب نیستند. برای امنیت واقعی از AES-GCM یا RSA استفاده کنید.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary data-i18n="faq.q4">چرا SHA-256 قابل رمزگشایی نیست؟</summary>
+                        <p data-i18n="faq.a4">SHA-256 یک تابع هش یک‌طرفه است. طراحی آن به‌گونه‌ای است که بازگرداندن ورودی از خروجی عملاً غیرممکن باشد. برای تأیید یکپارچگی داده استفاده می‌شود.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary data-i18n="faq.q5">آیا می‌توانم از این پروژه در محیط تولیدی استفاده کنم؟</summary>
+                        <p data-i18n="faq.a5">ابزارهای رمزگذاری از استانداردهای معتبر استفاده می‌کنند اما این پروژه عمدتاً آموزشی است. برای محیط تولیدی، بررسی امنیتی مستقل و استفاده از KMS/HSM توصیه می‌شود.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section cta-section" id="get-started">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 data-i18n="cta.title">آماده شروع هستید؟</h2>
+                    <p data-i18n="cta.desc">ابزارهای رمزنگاری و آموزش تعاملی — همه در مرورگر شما</p>
+                    <div class="cta-actions">
+                        <a href="#" class="btn btn-primary" data-i18n="cta.btn1">رمزگذاری متن</a>
+                        <a href="#" class="btn btn-secondary" data-i18n="cta.btn2">شروع آموزش</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">🔐</span>
+                    <span data-i18n="brand">رمزنگار</span>
+                </div>
+                <p class="footer-desc" data-i18n="footer.desc">پلتفرم آموزش و ابزار رمزنگاری — توسعه‌یافته با تمرکز بر امنیت و حریم خصوصی</p>
+                <div class="footer-links">
+                    <a href="#overview" data-i18n="nav.overview">معرفی</a>
+                    <a href="#features" data-i18n="nav.features">امکانات</a>
+                    <a href="#education" data-i18n="nav.education">آموزش</a>
+                    <a href="#architecture" data-i18n="nav.architecture">معماری</a>
+                </div>
+                <div class="footer-bottom">
+                    <p data-i18n="footer.warning">⚠️ این ابزار صرفاً آموزشی است — استفاده مخرب ممنوع</p>
+                    <p class="footer-copy">Web Crypto API • Vanilla JS • Made with 🔒</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
